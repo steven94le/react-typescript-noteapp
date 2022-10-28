@@ -9,7 +9,7 @@ const App = () => {
   const [notes, setNotes] = useState<Note[]>([
     {
       id: new Date().toString(),
-      title: "Meeting",
+      title: "Meetings",
       text: "Schedule meeting",
       color: "#dfdfdf",
       date: new Date().toString(),
@@ -22,7 +22,7 @@ const App = () => {
       <Container className="mt-5">
         <Row>
           <Col>
-            <NotesList notes={notes} />
+            <NotesList notes={notes} setNotes={setNotes} />
           </Col>
         </Row>
       </Container>
