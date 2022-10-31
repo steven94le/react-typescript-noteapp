@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# react-typescript-noteapp :notebook:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Introduction :wave:
 
-## Available Scripts
+Simple note taking app developed to primarily be exposed to and learn about TypeScript and Bootstrap. Users can create/delete notes as well as change color of the note itself. Form validation in place for texts and deployed on Netlify.
 
-In the project directory, you can run:
+![image](https://user-images.githubusercontent.com/76791687/199068507-e055af15-ed3c-496e-9511-102c9f209602.png)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## **Deploying The Project :computer:**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clone the repository to your local machine using the terminal:
 
-### `npm test`
+`$ git clone git@github.com:steven94le/react-typescript-noteapp.git`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installing the dependencies:
 
-### `npm run build`
+### The Client
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to the client folder `cd client`
+2. Install the required packages `yarn install`
+3. Once that's done you can start the server with `yarn start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This will run the app in development mode. Open http://localhost:3000 to view it in the browser! The page will reload if you make changes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Resources Used
 
-### `npm run eject`
+1. TypeScript Handbook
+- https://www.typescriptlang.org/docs/handbook/intro.html
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. React Bootstrap 
+- https://react-bootstrap.netlify.app/forms/overview/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Netlify Deployment
+- https://docs.netlify.com/get-started/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## **Technologies Used :computer:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Frontend:
+- JavaScript, React, Typescript, Bootstrap
 
-## Learn More
+## **Author :bust_in_silhouette:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Steven Le (GitHub: [@steven94le](https://github.com/steven94le))
