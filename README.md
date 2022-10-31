@@ -2,7 +2,7 @@
 
 # Introduction :wave:
 
-Simple note taking app developed to primarily be exposed to and learn about TypeScript and Bootstrap. Users can create/delete notes as well as change color of the note itself. Form validation in place for texts and deployed on Netlify.
+Simple note taking app developed to primarily be exposed to and learn about TypeScript and Bootstrap. Users can create/delete notes as well as change color of the note itself. Form validation in place for texts and Netlify was used for app deployment.
 
 ![image](https://user-images.githubusercontent.com/76791687/199068507-e055af15-ed3c-496e-9511-102c9f209602.png)
 
