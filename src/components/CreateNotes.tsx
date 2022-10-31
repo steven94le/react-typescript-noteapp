@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Alert, Button, Form } from "react-bootstrap";
 import { Note } from "../models/note.model";
 
 interface ICreateNotesProps {
@@ -35,11 +35,15 @@ const CreateNotes: React.FunctionComponent<ICreateNotesProps> = ({
         date: new Date().toString(),
       },
     ]);
+
+    (titleRef.current as HTMLInputElement).value = "";
+    (textRef.current as HTMLTextAreaElement).value = "";
   };
 
   return (
     <>
       <h2>Create Notes</h2>
+      {error && <Alert variant="danger">{error}</Alert>}
       <Form className="mt-3 mb-3" onSubmit={(e) => handleSubmit(e)}>
         <Form.Group className="mb-3" controlId="formBasicTitle">
           <Form.Label>Title</Form.Label>
