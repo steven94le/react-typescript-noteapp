@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Note } from "../models/note.model";
 
@@ -7,15 +7,40 @@ interface ICreateNotesProps {
   setNotes: React.Dispatch<React.SetStateAction<Note[]>>;
 }
 
-const CreateNotes: React.FunctionComponent<ICreateNotesProps> = (props) => {
+const CreateNotes: React.FunctionComponent<ICreateNotesProps> = ({
+  notes,
+  setNotes,
+}) => {
+  const [error, setError] = useState<string>("");
+
   const titleRef = useRef<HTMLInputElement | null>(null);
   const textRef = useRef<HTMLTextAreaElement | null>(null);
   const colorRef = useRef<HTMLInputElement | null>(null);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+
+    if (titleRef.current?.value === "" || textRef.current?.value === "") {
+      return setError("Both title and text fields are mandatory");
+    }
+
+    setError("");
+    setNotes([
+      ...notes,
+      {
+        id: new Date().toString(),
+        title: (titleRef.current as HTMLInputElement).value,
+        text: (textRef.current as HTMLTextAreaElement).value,
+        color: (colorRef.current as HTMLInputElement).value,
+        date: new Date().toString(),
+      },
+    ]);
+  };
+
   return (
     <>
       <h2>Create Notes</h2>
-      <Form className="mt-3 mb-3">
+      <Form className="mt-3 mb-3" onSubmit={(e) => handleSubmit(e)}>
         <Form.Group className="mb-3" controlId="formBasicTitle">
           <Form.Label>Title</Form.Label>
           <Form.Control
