@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Note } from "../models/note.model";
 
@@ -8,6 +8,10 @@ interface ICreateNotesProps {
 }
 
 const CreateNotes: React.FunctionComponent<ICreateNotesProps> = (props) => {
+  const titleRef = useRef<HTMLInputElement | null>(null);
+  const textRef = useRef<HTMLTextAreaElement | null>(null);
+  const colorRef = useRef<HTMLInputElement | null>(null);
+
   return (
     <>
       <h2>Create Notes</h2>
@@ -17,7 +21,8 @@ const CreateNotes: React.FunctionComponent<ICreateNotesProps> = (props) => {
           <Form.Control
             type="text"
             placeholder="Enter title for note"
-          ></Form.Control>
+            ref={titleRef}
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicText">
@@ -26,7 +31,8 @@ const CreateNotes: React.FunctionComponent<ICreateNotesProps> = (props) => {
             placeholder="Enter notes"
             as="textarea"
             rows={3}
-          ></Form.Control>
+            ref={textRef}
+          />
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -35,8 +41,9 @@ const CreateNotes: React.FunctionComponent<ICreateNotesProps> = (props) => {
             type="color"
             id="colorInput"
             defaultValue="#dfdfdf"
+            ref={colorRef}
             title="Choose your color"
-          ></Form.Control>
+          />
         </Form.Group>
 
         <Button type="submit" variant="primary">
